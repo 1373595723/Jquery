@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.1.1.js"></script>
+		<script>
+			$(document).ready(function(){
+				//选取所有input元素
+				alert($("input").length);
+				//选区form表单中的input元素
+				alert($("form>input").length);
+				//选取后的所有input同辈元素
+				alert($("form~input").length);
+				//选取紧接form的第一个input同辈元素
+				alert($("form+input").val());
+				//选取class为cls1的元素
+				alert($("input[class=cls1]").length);
+				//选取id为none5的元素
+				console.log($("input[id=none5]"));
+				$("input[id=none5]").css("border","1px solid blue");
+				//选取body中的第一个input元素
+				$("input:first-child").css("border","1px solid red");
+			});
+		</script>
+	</head>
+	<body>
+		<input name="nonel" value="nonel" />
+		<form>
+			<label>姓名：</label><input name="name" />
+			<label>通讯：</label><input name="newsletter" />
+		</form>
+		<input class="cls1" name="none2" value="none2"/>
+		<input class="cls1" name="none3" value="none3"/>
+		<input id="none4" class="cls1" name="none4" value="none4"/>
+		<input name="none5" value="none5"/>
+	</body>
+</html>

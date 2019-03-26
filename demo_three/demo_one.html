@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input id="btn" type="button" value="点击我"/>
+		<a href="https://www.baidu.com" id="myLink" target="_blank">百度</a>
+	</body>
+	<script src="../js/jquery-3.1.1.js"></script>
+	<script>
+		var btn=document.getElementById("btn");
+		var myLink=document.getElementById("myLink");
+//		btn.addEventListener("click",function(){
+//			alert(this.value);
+//		},false);
+//		btn.addEventListener("click",function(){
+//			alert("Hello Word");
+//		},false);
+//		var handle=function(){
+//			alert("Hello Word");
+//		}
+//		//添加
+//		btn.addEventListener("click",handle,false);
+//		//移除
+//		btn.removeEventListener("click",handle,false);
+//		$("#btn").on("click",function(){
+//			alert("你好");
+//		});
+//		$("#btn").on("mouseover",function(){
+//			alert("再见");
+//		});
+//		//off方移除事件
+//		$("#btn").off("mouseover");
+		//返回触发事件的目标srcElement
+		btn.onclick=function(){
+			var e=window.event;
+			alert(e.srcElement);
+			window.event.cancelBubble=true;
+		}
+		//取消默认事件
+		myLink.onclick=function(event){
+			var e=event || window.event;
+			alert("你哈");
+			e.preventDefault();
+			window.event.returnValue=false;
+		}
+		//取消事件冒泡cancelBubble
+		document.body.onclick=function(){
+			alert("你好");
+		}
+		//页面事件
+		window.onload=function(){
+			alert("页面加载完成！");
+		}
+		window.onresize=function(){
+			alert("页面大小被改变！");
+		}
+		window.onscroll=function(){
+			alert("页面滚动！");
+		}
+		//
+	</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width:400px;
+				height: 200px;
+				margin: 100px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<p>姓名：<input /></p>
+			<p>年龄：<input /></p>
+			<p>电话：<input /></p>
+			<p>住址：<input /></p>
+			<input type="button" value="确认" id="btn"/>
+		</div>
+	</body>
+	<script src="../js/jquery-3.1.1.js"></script>
+	<script>
+		var box=document.getElementsByClassName("box")[0];
+		var btn=document.getElementById("btn");
+		var p=document.getElementsByTagName("p");
+		console.log(p);
+		var inpu=box.children[0];
+		console.log($("input"));
+		$($("<p>性别：<input/></p>")).appendTo(inpu);
+		$(box.children[3]).remove();
+			$(inpu).append($("<span>该项为必填项</span>"));
+	</script>
+</html>

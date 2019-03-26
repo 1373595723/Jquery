@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>鼠标事件</title>
+		<style>
+			#btn{
+				width: 100px;
+				height: 100px;
+				background-color: purple;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<div id="btn">
+			
+		</div>-->
+		<input id="txt" type="text"/>
+	</body>
+	<script src="../js/jquery-3.1.1.js"></script>
+	<script>
+		var btn=document.getElementById("btn");
+//		btn.onclick=function(){
+//			alert("鼠标单击");
+//		}
+//		btn.ondblclick=function(){
+//			alert("鼠标双击");
+//		}
+		var txt=document.getElementById("txt");
+//		txt.onkeydown=function(event){
+//			event=event || window.event;
+//			alert(event.type);
+//		}
+		txt.onkeyup=function(event){
+			event=event || window.event;
+			alert(event.type);
+		}
+//		txt.onkeypress=function(event){
+//			event=event || window.event;
+//			alert(event.type);
+//		}
+	</script>
+</html>

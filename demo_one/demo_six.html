@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul class="movie">
+			<li>《神探夏洛克》</li>
+			<li>《匆匆那年》</li>
+			<li>《寻龙诀》</li>
+		</ul>
+		<ul class="song">
+			<li>明天会更好</li>
+			<li>大约在冬季</li>
+			<li>约定</li>
+		</ul>
+		<ul class="book">
+			<li>乖,摸摸头</li>
+		</ul>
+	</body>
+	<script src="../js/jquery-3.1.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("li:first-child").css("background-color","#09f");
+			$("li:last-child").css("background-color","#ccc");
+			$("li:only-child").css("border","1px soild #000");
+			$("li:nth-child(even)").css("font-weight","bold");
+			$("li:nth-child(odd)").css("font-family","楷体");
+		});
+	</script>
+</html>

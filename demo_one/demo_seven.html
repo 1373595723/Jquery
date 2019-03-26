@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<input type="text" value="可用文本框" /><br />
+			<input type="text" value="不可用文本框" disabled="disabled"/><br />
+			<textarea disabled="disabled">不可用文本域</textarea><br />
+		</div>
+		<div>
+			<input type="checkbox" value="must"/>必须勾选
+		</div>
+		<div>你现在工作的企业属于:
+			<input type="radio" name="radio" value="外企"/>外企
+			<input type="radio" name="radio" value="国企" checked="checked"/>国企
+			<input type="radio" name="radio" value="民企"/>民企
+		</div>
+		<select>
+			<option value="外企">外企</option>
+			<option value="国企">外企</option>
+			<option value="民企">外企</option>
+		</select>
+	</body>
+	<script src="../js/jquery-3.1.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(":enabled").css("border","1px soild #f00");
+			$(":disabled").css("border","1px soild #00f");
+			alert($(":checked").val());
+			alert($(":selected").val());
+		});
+	</script>
+</html>

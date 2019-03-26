@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#uls{
+				width: 200px;
+				height: 300px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="uls">
+			<li>我是第一个li</li>
+			<li>我是第2个li</li>
+			<li>我是第3个li</li>
+			<li>我是第4个li</li>
+		</ul>
+		<button id="btn">点击删除</button>
+	</body>
+	<script src="../js/jquery-3.1.1.js"></script>
+	<script>
+		//创建节点
+		//语法格式
+//		var e=$(html);
+//		$(.append(e));
+		//例一
+		$(function(){
+			var $li1=$("<li></li>")
+			$("ul").append($li1);
+			var $li2=$("<li>我是被创建的文本节点</li>");
+			$("ul").append($li2);
+		})
+		//插入节点方法
+//		append()和appendTO()
+//		prepend()和prependTo()
+//		before()和insertBefore()
+//		after()和insertAfterTo()
+		$(function(){
+			$("ul").append("<li>我是通过append插入的</li>");
+			$("<li>我是通过appendTo插入的</li>").appendTo($("ul"));
+			$("ul").prepend("<li>我是通过prepend插入的</li>");
+			$("<li>我是通过prependTo插入的</li>").prependTo($("ul"));
+			$("ul").before("<li>我是通过before插入的</li>");
+			$("<li>我是通过insertBeforeTo插入的</li>").insertBefore($("ul"));
+			$("ul").after("<li>我是通过after插入的</li>");
+			$("<li>我是通过insertAfter插入的</li>").insertAfter($("ul"));
+		})
+		//删除节点，方法
+//		remove()和empty()
+		$(function(){
+			$("button").click(function(){
+//				$("ul").empty();
+				$("ul").remove();
+			})
+		})
+		//替换节点，语法格式
+		//使用B替换A
+//		$(A).replaceAll(B);
+//		$(B).replaceWith(A);
+		$(function(){
+			$("<p>道高一尺，魔高一丈使用replaceAll替换<p/>").replaceAll($("li:eq(0)"));
+			$("li:eq(2)").replaceWith($("<p>道高一尺，魔高一丈使用replaceWith替换<p/>"));
+		})
+	</script>
+</html>

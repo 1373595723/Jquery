@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	<body>
+		<ul>
+			<li>我是第1个li</li>
+			<li>我是第2个li</li>
+			<li>我是第3个li</li>
+			<li>我是第4个li</li>
+			<li>我是第5个li</li>
+		</ul>
+		<button id="btn">点击替换</button>
+	</body>
+	<script src="../js/jquery-3.1.1.js"></script>
+	<script>
+		$(function(){
+			$("#btn").click(function(){
+				//定义一个数组
+				var arr=new Array(1,2,3,4,4);
+				$("li").each(function(index){
+					$(this).html(arr[index]);
+				})
+			})
+		})
+	</script>
+</html>
